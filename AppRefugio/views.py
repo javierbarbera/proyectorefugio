@@ -15,5 +15,3 @@ def discos(request):
 def peliculas(request):
     return render(request, "AppRefugio/peliculas.html")
 
-def lib(request):
-    return render(request, "AppRefugio/peliculas.html")
