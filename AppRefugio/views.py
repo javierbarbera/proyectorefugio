@@ -60,6 +60,15 @@ def peliculas_formulario(request):
         return render(request, "AppRefugio/peliculas_formulario.html", {"mi_formulario": mi_formulario})
 
     
+def buscar_libros(request):
+    return render(request, "AppRefugio/buscar_libros.html")
 
-
+def buscar(request):
+    titulo = request.GET.get("titulo", "")
+    if titulo:
+        resultados = Libro.objects.filter(titulo__icontains=titulo)
+        return render(request, "AppRefugio/resultadosBusqueda.html", {"titulo": titulo, "resultados": resultados})
+    else:
+        respuesta = "No enviaste datos."
+        return HttpResponse(respuesta)
 
