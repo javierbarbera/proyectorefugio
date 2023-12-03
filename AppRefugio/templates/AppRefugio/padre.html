@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Landing Page - Start Bootstrap Theme</title>
+        <title>El Refugio del Nerd</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -16,16 +16,26 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href= "{% static 'AppRefugio/css/styles.css' %}" rel="stylesheet" />
     </head>
+    <style>
+        .navbar-brand {
+        text-shadow: 2px 2px 6px #f4f4f5;}
+    .navbar-brand {
+        font-weight: bold; }
+    .navbar-brand {
+        font-family: 'Courier New', sans-serif; }
+    .navbar-brand {
+        font-size: 25px;}
+    </style>
     <body>
         <!-- Navigation-->
-        <nav class="navbar navbar-light bg-light static-top">
+        <nav class="navbar navbar-dark bg-dark static-top">
             <div class="container">
                 <a class="navbar-brand" href= {% url "inicio" %} >Inicio</a>
                 <a class="navbar-brand" href= {% url "libros" %} >Libros</a>
                 <a class="navbar-brand" href= {% url "discos" %} >Discos</a>
                 <a class="navbar-brand" href= {% url "peliculas" %} >Películas</a>
 
-                <a class="btn btn-primary" href="#signup">Sign Up</a>
+                <a class="btn btn-primary" href="#signup">Registrarse</a>
             </div>
         </nav>
         <!-- Masthead-->
@@ -35,7 +45,7 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">Generate more leads with a professional landing page!</h1>
+                            <h1 class="mb-5" style="font-family: 'Impact', sans-serif; font-size: 4em; font-weight: bold; color: #080808; text-shadow: 2px 2px 4px rgba(300, 17, 145, 0.575);">EL REFUGIO DEL NERD</h1>
                             <!-- Signup form-->
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
