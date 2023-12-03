@@ -24,6 +24,20 @@ Los usuarios podrán realizar lo siguiente:
 - Cerrar Sesión
 - Login en caso de haber cerrado sesión
 
+## Funcionalidades para la tercer entrega:
+
+## Formularios de carga:
+Se crearon 3 clases en el archivo "models.py": "Libro", "Disco" y "Pelicula".
+Cada modelo cuenta con su formulario para cargar información a la base de datos. Las rutas para la carga de cada uno de los tres formularios se encuentra en el archivo "urls.py" dentro de la aplicación:
+
+Para cargar info en libros: AppRefugio/librosFormulario
+Para cargar info en discos: AppRefugio/discosFormulario
+Para cargar info en películas: AppRefugio/peliculasFormulario
+
+## Formulario de busqueda:
+Se creo un formulario de busqueda, para buscar en la base de datos de la clase "Libro".
+
+Para la busqueda: AppRefugio/buscarLibros
 
 ## Se ha utilizado para la elaboración del proyecto:
 - HTML 5
