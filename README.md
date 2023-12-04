@@ -30,9 +30,9 @@ Los usuarios podrán realizar lo siguiente:
 Se crearon 3 clases en el archivo "models.py": "Libro", "Disco" y "Pelicula".
 Cada modelo cuenta con su formulario para cargar información a la base de datos. Las rutas para la carga de cada uno de los tres formularios se encuentra en el archivo "urls.py" dentro de la aplicación:
 
-Para cargar info en libros: AppRefugio/librosFormulario
-Para cargar info en discos: AppRefugio/discosFormulario
-Para cargar info en películas: AppRefugio/peliculasFormulario
+Para cargar info en libros: AppRefugio/libros
+Para cargar info en discos: AppRefugio/discos
+Para cargar info en películas: AppRefugio/peliculas
 
 ## Formulario de busqueda:
 Se creo un formulario de busqueda, para buscar en la base de datos de la clase "Libro".

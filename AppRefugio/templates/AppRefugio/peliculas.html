@@ -4,7 +4,17 @@
 
 {% block contenidoQueCambia %}
 
-<h1> Películas</h1>
+{% if mi_formulario.errors %}
+<p style="color:red">Están mal los datos, revisar</p>
+{% endif %}
+
+<form action = ""   method = "post"> {% csrf_token %}
+    <table>
+        {{mi_formulario.as_table}}
+    </table>
+    <input type = "submit" value="Enviar">
+</form>         
+
 
 
 {% endblock contenidoQueCambia %}
