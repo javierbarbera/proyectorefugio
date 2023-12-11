@@ -1,0 +1,29 @@
+{% extends "AppRefugio/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h3>Listado de películas</h3>
+<button>
+<a href="{% url 'NuevoPeliculas' %}" > Nueva Película</a>
+</button>
+{% for p in peliculas %}
+    <li> Título: {{p.titulo}}
+         / Director: {{p.director}}
+        <p>
+            <button>
+            <a href="{% url 'DetallePeliculas' p.pk %}" > Ver</a>
+        </button>
+            <button>
+            <a href="{% url 'EditarPeliculas' p.pk %}" > Editar</a>
+        </button>
+            <button>
+            <a href="{% url 'BorrarPeliculas' p.pk %}" > Borrar</a>
+        </button>
+
+        </p>
+    </li>
+
+{% endfor %}
+{% endblock contenidoQueCambia %}

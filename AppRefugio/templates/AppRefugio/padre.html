@@ -31,11 +31,23 @@
         <nav class="navbar navbar-dark bg-dark static-top">
             <div class="container">
                 <a class="navbar-brand" href= {% url "inicio" %} >Inicio</a>
-                <a class="navbar-brand" href= {% url "libros" %} >Libros</a>
-                <a class="navbar-brand" href= {% url "discos" %} >Discos</a>
-                <a class="navbar-brand" href= {% url "peliculas" %} >Películas</a>
+                <a class="navbar-brand" href= {% url "leerlibros" %} >Libros</a>
+                <a class="navbar-brand" href= {% url "ListaDiscos" %} >Discos</a>
+                <a class="navbar-brand" href= {% url "ListaPeliculas" %} >Películas</a>
+                {% if user.is_authenticated %}
+                    <a class="btn btn-primary" href={% url "user_logout" %} >Log Out</a>
+                    <a class="navbar-brand" href= {% url "EditarPerfil" %}>{{request.user.username}}</a>
+                {% else %}
+                    <a class="btn btn-primary" href={% url "user_login" %} >Log In</a>
+                    <a class="btn btn-primary" href={% url "user_register" %} >Registrarse</a>
+                {% endif %}
+                {% if request.user.avatar %}
+                    <img src="{{request.user.avatar.imagen.url}}" alt ="" height="40px">
+                {% endif %}
 
-                <a class="btn btn-primary" href="#signup">Registrarse</a>
+
+
+
             </div>
         </nav>
         <!-- Masthead-->

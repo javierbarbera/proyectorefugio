@@ -1,0 +1,29 @@
+{% extends "AppRefugio/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h3>Listado de discos</h3>
+<button>
+<a href="{% url 'NuevoDiscos' %}" > Nuevo Disco</a>
+</button>
+{% for d in discos %}
+    <li> Título: {{d.titulo}}
+         / Interprete: {{d.interprete}}
+        <p>
+            <button>
+            <a href="{% url 'DetalleDiscos' d.pk %}" > Ver</a>
+        </button>
+            <button>
+            <a href="{% url 'EditarDiscos' d.pk %}" > Editar</a>
+        </button>
+            <button>
+            <a href="{% url 'BorrarDiscos' d.pk %}" > Borrar</a>
+        </button>
+
+        </p>
+    </li>
+
+{% endfor %}
+{% endblock contenidoQueCambia %}

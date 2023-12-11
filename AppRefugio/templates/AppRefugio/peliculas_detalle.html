@@ -1,0 +1,18 @@
+{% extends "AppRefugio/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h3> Detalle Películas</h3>
+
+<p>Título de la película: <i> {{pelicula.titulo}}</i></p>
+<p>Director: <i> {{pelicula.director}}</i></p>
+<p>Sinopsis: <i> {{pelicula.sinopsis}}</i></p>
+<p>
+    <a href="{% url 'ListaPeliculas' %}" > Regresar</a>
+</p>
+
+
+
+{% endblock contenidoQueCambia %}

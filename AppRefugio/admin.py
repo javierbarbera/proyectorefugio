@@ -1,6 +1,6 @@
 from django.contrib import admin
-from AppRefugio.models import Libro, Disco, Pelicula
-
+from AppRefugio.models import Libro, Disco, Pelicula, Avatar
+from AppRefugio import models
 
 # admin.site.register(models.Libro)
 # admin.site.register(models.Disco)
@@ -23,3 +23,5 @@ class PeliculaAdmin(admin.ModelAdmin):
     list_display = ("titulo", "director", "sinopsis")
     list_filter = ("titulo", "director")
     search_fields = ("titulo", "director")
+
+admin.site.register(models.Avatar)

@@ -1,0 +1,19 @@
+{% extends "AppRefugio/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h3>Editar Película</h3>
+
+
+<form action = ""   method = "post"> {% csrf_token %}
+    
+        {{form.as_p}}
+    
+    <input type = "submit" value="Editar">
+</form>         
+
+
+
+{% endblock contenidoQueCambia %}

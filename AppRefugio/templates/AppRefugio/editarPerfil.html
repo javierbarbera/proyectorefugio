@@ -1,0 +1,28 @@
+{% extends "AppRefugio/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h3>Formulario - Editar Perfil</h3>
+<h3>De {{usuario}}</h3>
+
+<form action = ""   method = "post"  enctype="multipart/form-data"> {% csrf_token %}
+    
+    <table>
+        {{mi_formulario}}
+        
+    </table>
+    <input type="submit" value = "Enviar">
+
+    <form>
+    <button type="button">
+        <a class="navbar-brand" href="{% url 'CambiarContrasenia' %}" > Cambiar contraseña</a>
+    </button>
+    </form>
+
+</form>         
+
+
+
+{% endblock contenidoQueCambia %}   

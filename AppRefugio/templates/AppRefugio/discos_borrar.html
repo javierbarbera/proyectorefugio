@@ -1,0 +1,17 @@
+{% extends "AppRefugio/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h3>Borrar Disco</h3>
+
+
+<form action = ""   method = "post"> {% csrf_token %}
+    Estas seguro que deseas borrar el disco {{discos.titulo}} del interprete {{discos.interprete}} ?
+    <input type = "submit" value="Eliminar">
+</form>         
+
+
+
+{% endblock contenidoQueCambia %}
