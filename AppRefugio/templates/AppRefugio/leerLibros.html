@@ -8,6 +8,9 @@
 <body>
     {% for l in libros %}
         <li>{{l}}</li>
+    {% if l.imagen %}
+        <img src="{{ l.imagen.url }}" alt="Imagen del libro {{ l.titulo }}">
+    {% endif %}
     
     <button>
         <a href="{% url 'eliminarlibros' l.titulo %}" > Eliminar</a>

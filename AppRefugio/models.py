@@ -7,6 +7,8 @@ class Libro(models.Model):
     titulo= models.CharField(max_length=50)
     autor= models.CharField(max_length=50)
     sinopsis= models.TextField()
+    imagen = models.ImageField(upload_to="libros_imagenes/", null=True, blank=True)
+    
 
     def __str__(self):
         return f"Título: {self.titulo} - Autor: {self.autor} - Sinopsis: {self.sinopsis}"

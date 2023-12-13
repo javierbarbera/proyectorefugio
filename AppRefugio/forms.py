@@ -1,11 +1,12 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserModel, UserChangeForm
 from django.contrib.auth.models import User
+from AppRefugio.models import Libro
 
-class LibroFormulario(forms.Form):
-    titulo= forms.CharField(max_length=50)
-    autor= forms.CharField(max_length=50)
-    sinopsis= forms.CharField(widget=forms.Textarea)
+class LibroFormulario(forms.ModelForm):
+    class Meta:
+        model = Libro
+        fields = ['titulo', 'autor', 'sinopsis', 'imagen']
 
 class DiscoFormulario(forms.Form):
     titulo= forms.CharField(max_length=50)

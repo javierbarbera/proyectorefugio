@@ -19,12 +19,12 @@ def inicio(request):
 
 def libros(request):
     if request.method == "POST":
-        mi_formulario = LibroFormulario(request.POST)
+        mi_formulario = LibroFormulario(request.POST, request.FILES)
         print(mi_formulario)
 
         if mi_formulario.is_valid():
             informacion = mi_formulario.cleaned_data
-            libro = Libro(titulo = informacion["titulo"],autor = informacion["autor"], sinopsis = informacion["sinopsis"])
+            libro = Libro(titulo = informacion["titulo"],autor = informacion["autor"], sinopsis = informacion["sinopsis"], imagen = informacion["imagen"])
             libro.save()
             return render(request, "AppRefugio/inicio.html")
     else:
@@ -96,7 +96,7 @@ def eliminar_libros(request, libro_titulo):
 def editar_libros(request, libro_titulo):
     libro = Libro.objects.get(titulo = libro_titulo)
     if request.method == "POST":
-        mi_formulario = LibroFormulario(request.POST)
+        mi_formulario = LibroFormulario(request.POST, request.FILES)
         print(mi_formulario)
 
         if mi_formulario.is_valid():
@@ -105,11 +105,12 @@ def editar_libros(request, libro_titulo):
             libro.titulo = informacion["titulo"]
             libro.autor = informacion["autor"]
             libro.sinopsis = informacion["sinopsis"]
+            libro.imagen = informacion["imagen"]
 
             libro.save()
             return render(request, "AppRefugio/inicio.html")
     else:
-        mi_formulario = LibroFormulario(initial={"titulo": libro.titulo, "autor": libro.autor, "sinopsis": libro.sinopsis})
+        mi_formulario = LibroFormulario(initial={"titulo": libro.titulo, "autor": libro.autor, "sinopsis": libro.sinopsis, "imagen": libro.imagen})
             
     return render(request, "AppRefugio/editarLibros.html", {"mi_formulario": mi_formulario, "libro_titulo": libro_titulo})
 
@@ -168,33 +169,6 @@ class PeliculaDeleteView(DeleteView):
     model = Pelicula
     template_name = "AppRefugio/peliculas_borrar.html"
     success_url = reverse_lazy("ListaPeliculas")
-
-
-# def login_request(request):
-#     if request.method == "POST":
-#         form = AuthenticationForm(request, data = request.POST)
-#         if form.is_valid():
-#             usuario = form.cleaned_data.get("username")
-#             contrasenia = form.cleaned_data.get("password")
-#             user = authenticate(username = usuario, password = contrasenia)
-
-#             login(request, user)
-#             return render(request, "AppRefugio/inicio.html", {"mensaje": f'Bienvenido {user.username}'})
-#     else:
-#         form = AuthenticationForm()
-#         return render(request, "AppRefugio/login.html", {"form": form})
-    
-# def registro(request):
-#     if request.method == "POST":
-#         form = UserCreationFormCustom(request.POST)
-#         if form.is_valid():
-#             username= form.cleaned_data["username"]
-#             form.save()
-#             return render(request, "AppRefugio/inicio.html", {"mensaje": "Usuario creado con éxito."})
-
-#     else:
-#         form = UserCreationFormCustom()
-#         return render(request, "AppRefugio/registro.html", {"form": form})
 
 
 def user_login(request):

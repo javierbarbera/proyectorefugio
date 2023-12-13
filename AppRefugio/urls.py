@@ -4,6 +4,7 @@ from django.contrib.auth.views import LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
     path("inicio/", views.inicio, name="inicio"),
     path("libros/", views.libros, name="libros"),
@@ -39,6 +40,5 @@ urlpatterns = [
     path('about/', views.about, name='acerca_de_mi'),
 
 
-]
-
-urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+ 
