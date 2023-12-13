@@ -242,3 +242,6 @@ def editar_perfil(request):
 class CambiarContrasenia(LoginRequiredMixin, PasswordChangeView):
     template_name = "AppRefugio/cambiar_contrasenia.html"
     success_url = reverse_lazy("EditarPerfil")
+
+def about(request):
+    return render(request, 'AppRefugio/acerca_de_mi.html', {})

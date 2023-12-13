@@ -1,0 +1,45 @@
+{% extends "AppRefugio/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<br>
+<br>
+
+
+    <div class="container">
+       <h2 class="text-center text-dark">
+           Acerca de Mi
+       </h2>
+       <br>
+       <div class="row g-4">
+           <div class="col-md-6 col-lg-3">
+               <div class="card bg-success">
+                    <div class="card-body text-center">
+                        <img src="{% static 'imagenes/jp2.jpeg' %}" class="rounded-circle mb-3" width="150px">
+                    <h3 class="card-title mb-3">Javier Barbera</h3>
+                    <p class="card-text">Futuro Python Developer</p>
+                    <p class="card-text">Podes seguirme en:</p>
+                    <a href="https://github.com/javierbarbera"><i class="bi bi-github text-dark mx-1"></i></a>
+                    <a href="https://www.linkedin.com/in/javier-ezequiel-barbera-8963b3189/"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                    </div>
+               </div>
+           </div>
+           <div class="col">
+            <div class="">
+                 <div class="text-center">
+                    <p>Hola! Soy Javier y soy un contador público con aspiraciones de programador.</p>
+                 </div>
+            </div>
+        </div>
+       </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>      
+
+
+
+{% endblock contenidoQueCambia %}

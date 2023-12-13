@@ -36,6 +36,8 @@ urlpatterns = [
     path('editarPerfil/', views.editar_perfil, name ="EditarPerfil"),
     path('cambiarContrasenia/', views.CambiarContrasenia.as_view(), name ="CambiarContrasenia"),
 
+    path('about/', views.about, name='acerca_de_mi'),
+
 
 ]
 
