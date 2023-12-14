@@ -24,7 +24,7 @@ Los usuarios podrán realizar lo siguiente:
 - Cerrar Sesión
 - Login en caso de haber cerrado sesión
 
-## Funcionalidades para la tercer entrega:
+## Funcionalidades
 
 ## Formularios de carga:
 Se crearon 3 clases en el archivo "models.py": "Libro", "Disco" y "Pelicula".
@@ -38,6 +38,14 @@ Para cargar info en películas: AppRefugio/peliculas
 Se creo un formulario de busqueda, para buscar en la base de datos de la clase "Libro".
 
 Para la busqueda: AppRefugio/buscarLibros
+
+## Log In (inicio de sesión):
+
+Se configuró el log in para iniciar sesión en caso de tener un usuario registrado.
+
+## Registro:
+
+Se configuró el registro de usuario para iniciar sesión en caso de no contar con un usuario registrado.
 
 ## Se ha utilizado para la elaboración del proyecto:
 - HTML 5

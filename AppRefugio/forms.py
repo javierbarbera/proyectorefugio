@@ -6,7 +6,7 @@ from AppRefugio.models import Libro
 class LibroFormulario(forms.ModelForm):
     class Meta:
         model = Libro
-        fields = ['titulo', 'autor', 'sinopsis', 'imagen']
+        fields = ['titulo', 'subtitulo','autor','fecha', 'sinopsis', 'imagen', 'autor_entrada']
 
 class DiscoFormulario(forms.Form):
     titulo= forms.CharField(max_length=50)

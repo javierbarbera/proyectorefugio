@@ -103,14 +103,23 @@ def editar_libros(request, libro_titulo):
             informacion = mi_formulario.cleaned_data
 
             libro.titulo = informacion["titulo"]
+            libro.subtitulo = informacion["subtitulo"]
+            libro.fecha = informacion["fecha"]
             libro.autor = informacion["autor"]
             libro.sinopsis = informacion["sinopsis"]
             libro.imagen = informacion["imagen"]
+            libro.autor_entrada = informacion["autor_entrada"]
 
             libro.save()
             return render(request, "AppRefugio/inicio.html")
     else:
-        mi_formulario = LibroFormulario(initial={"titulo": libro.titulo, "autor": libro.autor, "sinopsis": libro.sinopsis, "imagen": libro.imagen})
+        mi_formulario = LibroFormulario(initial={"titulo": libro.titulo,
+                                                 "subtitulo": libro.subtitulo,
+                                                 "fecha": libro.fecha,
+                                                  "autor": libro.autor, 
+                                                  "sinopsis": libro.sinopsis, 
+                                                  "imagen": libro.imagen,
+                                                  "autor_entrada": libro.autor_entrada})
             
     return render(request, "AppRefugio/editarLibros.html", {"mi_formulario": mi_formulario, "libro_titulo": libro_titulo})
 

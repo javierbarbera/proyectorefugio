@@ -8,10 +8,29 @@
 <body>
     {% for l in libros %}
         <li>{{l}}</li>
-    {% if l.imagen %}
-        <img src="{{ l.imagen.url }}" alt="Imagen del libro {{ l.titulo }}">
-    {% endif %}
+        <h1>{{ l.titulo }}</h1>
     
+        {% if l.subtitulo %}
+            <p>Subtítulo: {{ l.subtitulo }}</p>
+        {% endif %}
+
+        <p>Autor: {{ l.autor }}</p>
+
+        {% if l.fecha %}
+            <p>Fecha: {{ l.fecha }}</p>
+        {% endif %}
+        
+        
+        
+        <p>Sinopsis: {{ l.sinopsis }}</p>
+    
+        {% if l.imagen %}
+            <img src="{{ l.imagen.url }}" alt="{{ l.titulo }}">
+        {% endif %}
+
+        {% if l.autor_entrada %}
+            <p>Autor de la entrada: {{ l.autor_entrada }}</p>
+        {% endif %}
     <button>
         <a href="{% url 'eliminarlibros' l.titulo %}" > Eliminar</a>
     </button>
