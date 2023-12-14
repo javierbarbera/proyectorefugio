@@ -1,4 +1,4 @@
-# Tercer Entrega Coder House - Python Flex
+# Entrega Coder House - Python Flex
 
 #### Comisión: 56055
 
